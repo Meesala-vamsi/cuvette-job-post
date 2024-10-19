@@ -141,7 +141,7 @@ exports.verifyEmailOTP = asyncHandler(async (req, res, next) => {
       req.session.otpExpiresAt = null;
       req.session.userId = null;
 
-      return res.status(200).json({ message: "Email verification successful" });
+      return res.status(200).json({ status:"success",message: "Email verification successful" });
     } catch (error) {
       return next(
         new CustomError("Failed to verify email. Please try again.", 500)
