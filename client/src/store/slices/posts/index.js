@@ -10,7 +10,7 @@ export const jobPost = createAsyncThunk("/jobPost",
   async(formData,{rejectWithValue})=>{
     try {
       const response = await axios.post(
-        `http://localhost:5000/job/create`,
+        `${import.meta.env.VITE_API_URL}/job/create`,
         formData,
         {
           headers: {

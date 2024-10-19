@@ -49,6 +49,13 @@ const Verify = () => {
         >
           Verify
         </button>
+
+        <div className="my-4 flex gap-3">
+          <p className="text-xs md:text-lg">Go to login page. </p>
+          <Link to="/auth/login" className="text-xs md:text-lg">
+            Login here
+          </Link>
+        </div>
       </div>
     </div>
   );
