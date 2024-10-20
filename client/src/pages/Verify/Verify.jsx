@@ -4,6 +4,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { verifyEmailOTP } from '../../store/slices/authSlice';
 import { Link } from 'react-router-dom';
+import {toast} from "react-toastify";
 
 const Verify = () => {
   const [verificationData, setVerificationData] = useState({

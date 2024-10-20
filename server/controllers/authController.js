@@ -128,7 +128,8 @@ exports.userLogin=asyncHandler(async(req,res,next)=>{
 
 exports.verifyEmailOTP = asyncHandler(async (req, res, next) => {
   const { enteredEmailOTP } = req.body;
-
+  console.log(enteredEmailOTP)
+  console.log(req.session.emailOTP);
   if (enteredEmailOTP === req.session.emailOTP) {
     try {
       await Users.findByIdAndUpdate(
