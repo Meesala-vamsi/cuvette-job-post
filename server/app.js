@@ -9,13 +9,22 @@ const dotenv = require("dotenv")
 const app = express();
 dotenv.config({path:"./.env"})
 
+app.set("trust proxy", 1);
+
 app.use(
   session({
     secret: "vamsisony",
-    saveUninitialized:true,
-    resave:false
+    saveUninitialized: true,
+    resave: false,
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      sameSite: "none",
+      maxAge: 10 * 60 * 1000,
+    },
   })
 );
+
 app.use(
   cors({
     origin: process.env.CLIENT_URL,

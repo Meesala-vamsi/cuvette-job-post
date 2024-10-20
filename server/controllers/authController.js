@@ -130,6 +130,7 @@ exports.verifyEmailOTP = asyncHandler(async (req, res, next) => {
   const { enteredEmailOTP } = req.body;
   console.log(enteredEmailOTP)
   console.log(req.session.emailOTP);
+  console.log(req.session)
   if (enteredEmailOTP === req.session.emailOTP) {
     try {
       await Users.findByIdAndUpdate(
